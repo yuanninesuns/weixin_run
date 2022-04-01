@@ -31,9 +31,9 @@ def set_step(username: str, password: str, step: str):
     return None
 
 def main(username, password, start_step):
-    step = start_step
     while True:
         if datetime.now().hour==8:
+            step = start_step
             if datetime.now().weekday() in [1,2,3,4,5]: # 工作日
                 step = step + random.randint(88, 666)
                 res = set_step(username, password, str(step))
